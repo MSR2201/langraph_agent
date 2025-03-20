@@ -129,3 +129,34 @@ curl -X POST http://localhost:8000/ask \
      -H "Content-Type: application/json" \
      -d '{"query": "What is the main topic?", "max_docs": 5}'
 ```
+
+## Deployed API Access
+You can interact with the RAG Agent API using the deployed endpoint at: https://langraph-agent.onrender.com/
+
+### API Endpoints
+- **Health Check**: `GET` https://langraph-agent.onrender.com/health
+- **Document Upload**: `POST` https://langraph-agent.onrender.com/upload
+- **Query Endpoint**: `POST` https://langraph-agent.onrender.com/ask
+
+### Example Curl Commands for Deployed API
+```bash
+# Health Check
+curl https://langraph-agent.onrender.com/health
+
+# Upload a document
+curl -X POST -F "file=@/path/to/your/document.txt" https://langraph-agent.onrender.com/upload
+
+# Ask a question about the uploaded document
+curl -X POST https://langraph-agent.onrender.com/ask \
+     -H "Content-Type: application/json" \
+     -d '{"query": "What is the CNICA ?"}'
+```
+
+I have uploaded a document which is available for testing purposes you can upload any txt file and test it with new files.
+
+### Using with Postman or API Clients
+1. Base URL: `https://langraph-agent.onrender.com/`
+2. Follow the same endpoint patterns as local development
+3. Ensure your API client supports multipart form-data for document uploads
+
+
