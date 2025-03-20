@@ -48,17 +48,6 @@ TOGETHER_API_KEY=your_together_api_key_here
 uvicorn api:app --host 0.0.0.0 --port 8000
 ```
 
-### Option 2: Docker
-```bash
-# Build the Docker image
-docker build -t rag-agent .
-
-# Run the Docker container
-docker run -p 8000:8000 \
-    -e TOGETHER_API_KEY=your_together_api_key \
-    rag-agent
-```
-
 ## Interacting with the API
 
 ### 1. CLI Testing
